@@ -1,7 +1,9 @@
 /**
  * ------ keys --------------------
+ * 
  * video => v
  * gate => g
+ * 
  * ------ illustration horizontal --------------------
  * 
  *              -- v  -- v
@@ -26,7 +28,7 @@
 
 
  
- const tempalte =  { 
+ const template =  { 
     title: "title of the story",
     data: {
         nodes : {
