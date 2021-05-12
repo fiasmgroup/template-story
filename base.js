@@ -1,4 +1,6 @@
-const types = ["text", "image", "video", "imageFromVideo", "quiz", "gate", ""];
+const types = ["text", "image", "video", "imageFromVideo", "quiz", "gate", "group"];
+
+
 
 const options = [
   { divert: "nodeId" }, // requiare
@@ -49,12 +51,14 @@ const nodeImage = {
 
 const nodeQuiz = {
   // TODO : need more work on it
+  // the idea of this node is to add a question and answers 
   node_type: "quiz", // requiare
   content: [
-    // requiare
     "idQuiz", // requiare
   ],
 };
+
+
 
 const nodeGate = {
   node_type: "gate",
