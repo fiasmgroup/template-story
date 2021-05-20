@@ -36,7 +36,9 @@
                 node_type : "video",
                 content : [
                     "www.video.com",
-                    {divert : "NodeGate1"}
+                    {divert : "NodeGate1"},
+                    {start : 0},
+                    {end : 4}
                 ],
             },
             NodeGate1 : {

@@ -26,6 +26,9 @@ const nodeVideo = {
     // requiare
     "url", // requiare
     ...options,
+    {start : "numberInSeconde"}, //default : 0, optional from where start to play 
+    {end : "numberInSeconde"}, // default : the end of the video, optional from where it end
+    
   ],
 };
 
