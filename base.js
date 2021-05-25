@@ -1,4 +1,4 @@
-const types = ["text", "image", "video", "imageFromVideo", "quiz", "gate", "group"];
+const types = ["text", "image", "video", "imageFromVideo", "quiz", "gate", "group", "tunnel"];
 
 
 
@@ -6,7 +6,7 @@ const options = [
   { divert: "nodeId" }, // requiare
   { flagName: "string" }, // optional needed to track the state of progresstion : presistance
   { extra: "a,b,c,d" }, // optional needed to identifie or add extra parametre to the object : only when used
-  { blockNext: true }, // default : true, optional use to block the next node or let it pass before the end of the current
+  { blockNext: true|false }, // default : true, optional use to block the next node or let it pass before the end of the current
   { checkPoint: "checkPoint name" }, // optional save from this node and give it a name
   { ifConditions: "flagName", notIfConditions: "flagName", linkPath: "nodeId" }, // optional if condition skip this node and go to linkPath
 ];
@@ -17,6 +17,15 @@ const nodeText = {
     // requiare
     "text", // requiare
     ...options,
+  ],
+};
+
+const nodeTunnel = {
+  node_type: "tunnel", // requiare
+  content: [
+    // requiare
+    "text", // requiare TODO : maybe we can use this 
+    ...options, // blockNext default : false  
   ],
 };
 
