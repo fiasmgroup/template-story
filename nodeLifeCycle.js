@@ -8,7 +8,9 @@ class nodeHandler {
     this.initial = template.data.initial;
     this.currentNode;
   }
-  addFlag = (flag) => {};
+  ifCondition = (flags) => {}; // return true if all flags exist
+  notIfConditions = (flags) => {} // return true if all flags don't exist
+  addFlag = (flag) => {}; 
   isFlagExist = (flag) => {}; // return if flag existe in this.flags or not
   getNode = (keyNode) => {}; // get node from template and return  {key,schema}
   getNodeSchema = (keyNode) => {}; // get schema from template and return schema
@@ -60,14 +62,18 @@ class nodeHandler {
 class Node {
   constructor(node, controller) {
     // node definition
+    this._controller = controller ;
     this.uniqueId;
     this.nodeFlags = [];
     this.divert = null;
     this.general = schema[0];
     this.schema = node.schema;
     this.key = node.key;
+    this.blockNext = true ;
+    this.checkPoint = null ;
     // node control
-    this.calledNext = false;
+    this.calledNext = false; // if this node called for the next node
+    this.uniqueId = uuidv4()
   }
   init = () => {};
   beforeInvoke = () => {};
@@ -92,8 +98,26 @@ class GateNode extends Node {
     this.options = [];
   }
   gateInit = () => {};
+  getConfition = () => {};
+  getVisited = () => {};
 }
 
+export class ImageNode extends Node {
+  // eslint-disable-next-line no-useless-constructor
+  constructor(node,controller){
+      super(node,controller);
+      // this.beforeInvoke = this.beforeInvoke.bind(this);
+      
+  }
+
+}
+class TunnelNode extends Node {
+  // eslint-disable-next-line no-useless-constructor
+  constructor(node,controller){
+      super(node,controller);
+      this.blockNext = false ; // tunnel by default is false 
+  }
+}
 class NodeFactory {
   constructor(node, ...props) {
     if (type === "video") return new VideoNode(node, ...props);
@@ -101,5 +125,6 @@ class NodeFactory {
     if(type === "text") return new TextNode(node, ...props);
     if(type === "imageFromVideo") return ImageFromVideoNode(node, ...props)
     if(type === "image") return ImageNode(node, ...props)
+    if(type === "tunnel") return TunnelNode(node, ...props)
   }
 }

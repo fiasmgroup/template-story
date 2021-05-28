@@ -79,20 +79,23 @@ const nodeGate = {
     {
       option: "text option",
       linkPath: "idNode",
-      ifCondition: "string",
-      notIfConditions: "string",
+      ifCondition: "flags",
+      notIfConditions: "flags",
+      visited : "flags"
     },
     {
       option: "text option",
       linkPath: "idNode",
-      ifCondition: "string",
-      notIfConditions: "string",
+      ifCondition: "flags",
+      notIfConditions: "flags",
+      visited : "flags"
     },
     {
       option: "text option",
       linkPath: "idNode",
-      ifCondition: "string",
-      notIfConditions: "string",
+      ifCondition: "flags",
+      notIfConditions: "flags",
+      visited : "flags"
     },
   ],
 };
