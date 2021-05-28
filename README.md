@@ -1,3 +1,6 @@
+# resources
+- (https://github.com/davidkpiano/xstate)[https://github.com/davidkpiano/xstate]
+
 # template-story
 
 ```json
